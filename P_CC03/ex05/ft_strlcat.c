@@ -6,11 +6,11 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:22:17 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/02 15:38:38 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:25:07 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -55,6 +55,6 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 // {
 // 	char src[] = " World";
 //     char dest [] = "Hello";
-//     printf("%i \n", ft_strlcat(dest, src, 20));
+//     printf("%i \n", ft_strlcat(dest, src, 7));
 //     printf("%s \n", dest);
 // }	

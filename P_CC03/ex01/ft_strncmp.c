@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:05:13 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/02 15:38:20 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:01:45 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	while (*s1 && *s2 && i < n)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
 		if (s1[i] > s2[i])
 		{
@@ -38,6 +38,6 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 // {
 // 	char arr1[] = "aaaasd";
 // 	char arr2[] = "aaaesd";
-// 	printf("%d", ft_strncmp(arr1, arr2, 3));
+// 	printf("%d", ft_strncmp(arr1, arr2, 5));
 // 	return 0;
 // }

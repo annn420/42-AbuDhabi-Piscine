@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 21:45:40 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/02 15:38:10 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:24:52 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strcmp(char *s1, char *s2)
 // #include<stdio.h>
 // int	main()
 // {
-// 	char arr1[] = "aaa";
-// 	char arr2[] = "zaa";
+// 	char arr1[] = "abc";
+// 	char arr2[] = "def";
 // 	printf("%d", ft_strcmp(arr1, arr2));
 // }

@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 14:18:52 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/02 15:38:24 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:18:57 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ char	*ft_strcat(char *dest, char *src)
 	while (src[src_counter] != '\0')
 	{
 		dest[length_of_dest] = src[src_counter];
-		length_of_dest++;
 		src_counter++;
 	}
+	dest[length_of_dest] = '\0';
 	return (dest);
 }
 
@@ -34,8 +34,8 @@ char	*ft_strcat(char *dest, char *src)
 // #include<string.h>
 // int	main()
 // {
-// 	char arr1[25] = "dd";
-// 	char arr2[] = "aaaesd";
+// 	char arr1[25] = "scho";
+// 	char arr2[] = "ol";
 // 	printf("%s", ft_strcat(arr1, arr2));
 // 	return 0;
 // }
