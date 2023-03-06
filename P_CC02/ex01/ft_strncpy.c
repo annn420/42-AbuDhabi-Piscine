@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 19:27:53 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/01 16:21:25 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/04 21:25:03 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-// #include<stdio.h>
-// int main()
-// {
-// 	char src[] = "Test string";
-// 	char dest[] = "ps";
+#include<stdio.h>
+int main()
+{
+	char src[] = "sad";
+	char dest[] = "sgfdfgdsgn";
 
-// 	ft_strncpy(dest, src, 3);
-// 	printf("%s", dest);
-// 	return 0;
-// }
+	ft_strncpy(dest, src, 3);
+	printf("%s", dest);
+	return 0;
+}

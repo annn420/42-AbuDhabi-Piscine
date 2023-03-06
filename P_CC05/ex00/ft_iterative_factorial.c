@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 14:56:33 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/04 18:45:15 by mel-ayou         ###   ########.fr       */
+/*   Created: 2023/03/05 11:57:50 by mel-ayou          #+#    #+#             */
+/*   Updated: 2023/03/06 10:15:51 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
-{
-	int	i;
-	int	j;
+#include<stdio.h>
 
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return (str);
-	while (str[i] != '\0')
+int	ft_iterative_factorial(int nb)
+{
+	int	total_factorial;
+
+	total_factorial = 1;
+	while (nb > 0)
 	{
-		while (str[i + j] == to_find[j] && str[i + j] != '\0')
-			j++;
-		if (to_find[j] == '\0')
-			return (str + i);
-		i++;
-		j = 0;
+		total_factorial *= nb;
+		nb--;
 	}
-	return (0);
+	if (nb < 0 || nb > 12)
+	{
+		return (0);
+	}
+	return (total_factorial);
 }
 
-// #include <stdio.h>
-// int	main()
+// int main()
 // {
-// 	char str[] = "Hello World!";
-// 	char find[] = "Wo";
-// 	printf("%s", ft_strstr(str, find));
+// 	printf("%d", ft_recursive_factorial(5));
+// 	return 0;
 // }

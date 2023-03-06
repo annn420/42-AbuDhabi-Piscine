@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 14:56:33 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/04 18:45:15 by mel-ayou         ###   ########.fr       */
+/*   Created: 2023/03/05 18:56:44 by mel-ayou          #+#    #+#             */
+/*   Updated: 2023/03/05 19:24:08 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+#include <stdio.h>
+
+int	ft_is_prime(int nb)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	i = 2;
+	if (nb < 2)
+		return (0);
+	while (i <= nb / i)
 	{
-		while (str[i + j] == to_find[j] && str[i + j] != '\0')
-			j++;
-		if (to_find[j] == '\0')
-			return (str + i);
+		if (nb % i == 0)
+			return (0);
 		i++;
-		j = 0;
+	}
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (nb < 2)
+		return (2);
+	while (nb >= 2)
+	{
+		if (ft_is_prime(nb) == 1)
+			return (nb);
+		nb++;
 	}
 	return (0);
 }
 
-// #include <stdio.h>
-// int	main()
+// int main()
 // {
-// 	char str[] = "Hello World!";
-// 	char find[] = "Wo";
-// 	printf("%s", ft_strstr(str, find));
+// 	printf("%d", ft_find_next_prime(1));
+// 	return 0;
 // }

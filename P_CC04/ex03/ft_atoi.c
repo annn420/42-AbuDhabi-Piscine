@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:50:35 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/04 17:10:58 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/05 12:14:17 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_atoi(char *str)
 			i++;
 		else if (str[i] == 43 || str[i] == 45)
 		{
-			if ((str[i] >= 9 && str[i] <= 13) || str[i + 1] == 32)
+			if ((str[i + 1] >= 9 && str[i + 1] <= 13) || str[i + 1] == 32)
 				return (0);
 			else if (str[i] == 45)
 				signs_counter *= -1;
@@ -59,9 +59,9 @@ int	ft_atoi(char *str)
 	return (total);
 }
 
-// int main(void)
-// {
-// 	char *s = "    		 ---+--+1234ab567";
-// 	printf("%d", ft_atoi(s));
-// 	return 0;
-// }
+int main(void)
+{
+	char *s = "    		 --- +--+1234ab567";
+	printf("%d", ft_atoi(s));
+	return 0;
+}

@@ -1,7 +1,7 @@
 # Pointers
 - Variables that store memory address of other variables.
 
-####Example
+#### Example
 ```c
 int a;
 int *p;

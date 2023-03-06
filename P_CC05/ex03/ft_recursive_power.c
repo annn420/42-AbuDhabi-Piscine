@@ -1,45 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/04 17:02:04 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/04 22:29:20 by mel-ayou         ###   ########.fr       */
+/*   Created: 2023/03/05 15:08:49 by mel-ayou          #+#    #+#             */
+/*   Updated: 2023/03/05 19:19:05 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include<stdio.h>
 
-void	ft_putchar(char c)
+int	ft_recursive_power(int nb, int power)
 {
-	write(1, &c, 1);
+	if (power > 0)
+		return (nb * ft_recursive_power(nb, power - 1));
+	if (power == 0)
+		return (1);
+	if (power < 0 || nb == 0)
+		return (0);
+	return (1);
 }
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
-	}  
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-		ft_putnbr(nb);
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + 48);
-}
-// int main (void)
+// int main()
 // {
-// 	ft_putnbr(2324);
+// 	printf("%d", ft_recursive_power(2, 5));
+// 	return 0;
 // }

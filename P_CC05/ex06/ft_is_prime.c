@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 14:56:33 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/04 18:45:15 by mel-ayou         ###   ########.fr       */
+/*   Created: 2023/03/05 17:58:59 by mel-ayou          #+#    #+#             */
+/*   Updated: 2023/03/05 19:23:22 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+#include <stdio.h>
+
+int	ft_is_prime(int nb)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	i = 2;
+	if (nb <= 1)
+		return (0);
+	while (i <= (nb / 2))
 	{
-		while (str[i + j] == to_find[j] && str[i + j] != '\0')
-			j++;
-		if (to_find[j] == '\0')
-			return (str + i);
-		i++;
-		j = 0;
+		if (!(nb % i))
+			return (0);
+		else
+			i++;
 	}
-	return (0);
+	return (1);
 }
 
-// #include <stdio.h>
-// int	main()
+// int main()
 // {
-// 	char str[] = "Hello World!";
-// 	char find[] = "Wo";
-// 	printf("%s", ft_strstr(str, find));
+// 	printf("%d", ft_is_prime(3));
+// 	return 0;
 // }
