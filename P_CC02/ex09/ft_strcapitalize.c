@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:27:42 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/01 16:25:27 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:42:37 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ char	*ft_strcapitalize(char *str)
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{
 			if (temp == 1)
+			{
 				str[i] -= 32;
+			}
 			temp = 0;
 		}
 		else if (str[i] >= '0' && str[i] <= '9')

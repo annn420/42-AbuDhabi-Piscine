@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:02:04 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/04 22:29:20 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:14:57 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 		ft_putchar('2');
 		ft_putnbr(147483648);
-	}  
+	}
 	else if (nb < 0)
 	{
 		ft_putchar('-');

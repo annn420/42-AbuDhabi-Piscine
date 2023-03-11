@@ -6,13 +6,13 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 11:50:38 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/07 21:37:15 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:44:27 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putchar(char *c)
 {
 	write (1, &c, 1);
 }

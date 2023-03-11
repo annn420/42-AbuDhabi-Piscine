@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 21:45:40 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/06 21:19:15 by mel-ayou         ###   ########.fr       */
+/*   Created: 2023/03/11 18:29:06 by mel-ayou          #+#    #+#             */
+/*   Updated: 2023/03/11 18:29:06 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include<stdio.h>
+#include<stdlib.h>
+#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2)
+int *ft_range(int min, int max)
 {
-	while (*s1 == *s2 && *s1)
+	int *arr;
+	int	i;
+
+	if (min >= max || !(arr = (int *)malloc(sizeof(int) * (max - min) + 1)))
+		return (NULL);
+	i = 0;
+	while (min < max)
 	{
-		s1++;
-		s2++;
+		arr[i] = min;
+		i++;
+		min ++;
 	}
-	return (*s1 - *s2);
-}
-
-#include<stdio.h>
-int	main()
-{
-	char arr1[] = "abc";
-	char arr2[] = " ";
-	printf("%d", ft_strcmp(arr1, arr2));
+	return arr;
 }
