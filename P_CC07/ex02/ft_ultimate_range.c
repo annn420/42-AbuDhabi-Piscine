@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 18:29:10 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/11 18:29:10 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:10:04 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,17 @@ int	ft_strlen(int *str)
 	return (counter);
 }
 
-int ft_ultimate_range(int **range, int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int *arr;
-	int i;
+	int	*arr;
+	int	i;
 
-	if (min >= max)
-		return 0;
-	if (!(arr = (int *)malloc(sizeof(int) * (max - min) + 1)))
-		return -1;
 	i = 0;
+	if (min >= max)
+		return (0);
+	arr = (int *)malloc(sizeof(int) * (max - min) + 1);
+	if (!arr)
+		return (-1);
 	while (min < max)
 	{
 		arr[i] = min;

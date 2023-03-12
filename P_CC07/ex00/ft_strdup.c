@@ -6,7 +6,7 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 22:00:43 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/11 12:20:15 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:13:28 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-/*
-+1 for the null terminator
-*/
 char	*ft_strdup(char *src)
 {
 	char	*new_string;

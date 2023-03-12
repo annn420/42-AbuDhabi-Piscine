@@ -6,12 +6,12 @@
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 18:29:13 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/11 18:50:18 by mel-ayou         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:08:05 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int	ft_strlen(char *s)
@@ -24,34 +24,64 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-char *ft_strjoin(int size, char *strs[], char *sep)
+char	*ft_strcat(char *dest, char *src)
 {
-	char *arr;
-	int sizeOfAllStrings;
-	int i = 0;
-	int j = 0;
-	int k = 0;
+	int	length_of_dest;
+	int	src_counter;
 
-	while (size > 0)
+	length_of_dest = 0;
+	src_counter = 0;
+	while (dest[length_of_dest] != '\0')
 	{
-		sizeOfAllStrings += ft_strlen(strs[i++]);
+		length_of_dest++;
 	}
-	arr = malloc(sizeof(char) * sizeOfAllStrings + size * 3);
-	if (size == 0)
-		return (arr);
-	i = 0;
-	while (strs[i])
+	while (src[src_counter] != '\0')
 	{
-		j = 0;
-		while (strs[i][j])
-		{
-			arr[i] = strs[i][j];
-			j++;
-		}
-		if (strs[i][j] == '\0')
-			arr[i] = sep[0];
+		dest[length_of_dest++] = src[src_counter];
+		src_counter++;
+	}
+	dest[length_of_dest] = '\0';
+	return (dest);
+}
+
+int	strlen_expanded(int size, char **strs, int seplen)
+{
+	int	exp_length;
+	int	i;
+
+	exp_length = 0;
+	i = 0;
+	while (i < size)
+	{
+		exp_length += ft_strlen(strs[i]);
+		exp_length += seplen;
 		i++;
 	}
-	arr[i] = '\0';
-	return (arr);
+	exp_length -= seplen;
+	return (exp_length);
+}
+
+char	*ft_strjoin(int size, char *strs[], char *sep)
+{
+	int		i;
+	char	*dest;
+	int		exp_length;
+
+	i = 0;
+	if (size == 0)
+		return ((char *)malloc(sizeof(char)));
+	exp_length = strlen_expanded(size, strs, ft_strlen(sep));
+	dest = (char *)malloc(sizeof(char) * exp_length + 1);
+	if (!dest)
+		return (0);
+	while (i < size)
+	{
+		ft_strcat(dest, strs[i]);
+		if (i < size - 1)
+		{
+			ft_strcat(dest, sep);
+		}
+		i++;
+	}
+	return (dest);
 }
