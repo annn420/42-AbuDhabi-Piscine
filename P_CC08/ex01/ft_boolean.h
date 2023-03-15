@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 18:21:48 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/15 09:14:09 by mel-ayou         ###   ########.fr       */
+/*   Created: 2023/03/13 20:38:22 by hamohama          #+#    #+#             */
+/*   Updated: 2023/03/14 23:01:47 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stdio.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
-	int	*buffer;
-	int	size;
-	int	i;
+# define TRUE 1
+# define FALSE 0
+# define SUCCESS 0
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
 
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	size = max - min;
-	buffer = malloc(size * sizeof(int));
-	i = 0;
-	if (buffer == NULL)
-	{
-		*range = NULL;
-		return (-1);
-	}
-	while (i < size)
-	{
-		buffer[i] = min;
-		min++;
-		i++;
-	}
-	*range = buffer;
-	return (size);
-}
+typedef int	t_bool;
+# define EVEN(number) (number % 2 == 0)
+#endif 

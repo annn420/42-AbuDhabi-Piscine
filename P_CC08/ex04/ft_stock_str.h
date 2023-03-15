@@ -1,43 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 18:21:48 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/15 09:14:09 by mel-ayou         ###   ########.fr       */
+/*   Created: 2023/03/14 23:08:50 by mel-ayou          #+#    #+#             */
+/*   Updated: 2023/03/14 23:09:29 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stdio.h>
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-int	ft_ultimate_range(int **range, int min, int max)
+typedef struct s_stock_str
 {
-	int	*buffer;
-	int	size;
-	int	i;
+	int size;
+	char *str;
+	char *copy;
+} t_stock_str;
 
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	size = max - min;
-	buffer = malloc(size * sizeof(int));
-	i = 0;
-	if (buffer == NULL)
-	{
-		*range = NULL;
-		return (-1);
-	}
-	while (i < size)
-	{
-		buffer[i] = min;
-		min++;
-		i++;
-	}
-	*range = buffer;
-	return (size);
-}
+#endif

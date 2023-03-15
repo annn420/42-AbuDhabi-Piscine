@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-ayou <mel-ayou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 18:21:48 by mel-ayou          #+#    #+#             */
-/*   Updated: 2023/03/15 09:14:09 by mel-ayou         ###   ########.fr       */
+/*   Created: 2023/03/13 20:23:49 by hamohama          #+#    #+#             */
+/*   Updated: 2023/03/14 23:00:08 by mel-ayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stdio.h>
+#ifndef FT_H
+# define FT_H
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
-	int	*buffer;
-	int	size;
-	int	i;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	size = max - min;
-	buffer = malloc(size * sizeof(int));
-	i = 0;
-	if (buffer == NULL)
-	{
-		*range = NULL;
-		return (-1);
-	}
-	while (i < size)
-	{
-		buffer[i] = min;
-		min++;
-		i++;
-	}
-	*range = buffer;
-	return (size);
-}
+#endif
