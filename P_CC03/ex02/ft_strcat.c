@@ -30,12 +30,12 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-// #include<stdio.h>
-// #include<string.h>
-// int	main()
-// {
-// 	char arr1[25] = "scho";
-// 	char arr2[] = "ol";
-// 	printf("%s", ft_strcat(arr1, arr2));
-// 	return 0;
-// }
+#include<stdio.h>
+#include<string.h>
+int	main()
+{
+	char arr1[25] = "scho";
+	char arr2[] = "ol";
+	printf("%s", ft_strcat(arr1, arr2));
+	return 0;
+}
