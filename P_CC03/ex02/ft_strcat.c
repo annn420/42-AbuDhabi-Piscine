@@ -29,9 +29,6 @@ char	*ft_strcat(char *dest, char *src)
 	dest[length_of_dest] = '\0';
 	return (dest);
 }
-
-// #include<stdio.h>
-// #include<string.h>
 // int	main()
 // {
 // 	char arr1[25] = "scho";
